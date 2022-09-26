@@ -4,10 +4,10 @@ if(!defined('APP_VERSION')) die('access denied');
 function db_connect(): mysqli
 {
     return mysqli_connect(
-        CONFIG_DB_HOST,
-        CONFIG_DB_USER,
-        CONFIG_DB_PASSWORD,
-        CONFIG_DB_NAME,
+        $_ENV['CONFIG_DB_HOST'],
+        $_ENV['CONFIG_DB_USER'],
+        $_ENV['CONFIG_DB_PASSWORD'],
+        $_ENV['CONFIG_DB_NAME'],
     );
 }
 

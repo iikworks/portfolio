@@ -6,6 +6,6 @@ function load_config(string $path): void
     $config = include($path);
 
     foreach ($config as $key => $var) {
-        define('CONFIG_'.$key, $var);
+        if(!isset($_ENV['CONFIG_'.$key])) $_ENV['CONFIG_'.$key] = $var;
     }
 }
