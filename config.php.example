@@ -1,0 +1,9 @@
+<?php
+if(!defined('APP_VERSION')) die('access denied');
+
+return [
+    'DB_HOST' => 'localhost',
+    'DB_USER' => 'root',
+    'DB_PASSWORD' => 'secret',
+    'DB_NAME' => 'portfolio',
+];

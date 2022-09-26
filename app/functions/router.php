@@ -11,9 +11,8 @@ function get_rules(): array
     return include(APP_ROOT.'/app/rules.php');
 }
 
-function match_route(string $uri): array | bool
+function get_routes_converted(): array
 {
-    $match = [];
     $routes = [];
 
     foreach (get_routes() as $route){
@@ -23,7 +22,14 @@ function match_route(string $uri): array | bool
         $routes[] = $route;
     }
 
-    foreach($routes as $route){
+    return $routes;
+}
+
+function match_route(string $uri): array | bool
+{
+    $match = [];
+
+    foreach(get_routes_converted() as $route){
         // Точное соответствие
         preg_match('~^'.$route['pattern'].'$~', $uri, $match);
         if(!empty($match)){
@@ -55,10 +61,11 @@ function match_route(string $uri): array | bool
 
 function url_for(string $controller, array $params = []): string
 {
-    foreach(get_routes() as $route){
+    foreach(get_routes_converted() as $route){
         if($route['controller'] == $controller) {
+            $url = $route['pattern'];
+
             if(!empty($params)) {
-                $url = $route['pattern'];
                 foreach($params as $key => $param) {
                     foreach(get_rules() as $rule) {
                         $replacement_chars = ['[', ']', '+'];

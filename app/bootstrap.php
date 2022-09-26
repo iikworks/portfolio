@@ -10,6 +10,8 @@ foreach($loading_dirs as $dir) {
     }
 }
 
+load_config(APP_ROOT.'/config.php');
+
 if($result = match_route($_SERVER['REQUEST_URI'])){
     str_replace(':', '_', $result['controller'])(...$result['params']);
 } else not_found();

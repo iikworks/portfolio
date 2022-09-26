@@ -1,1 +1,4 @@
-.idea
+/.idea
+/uploads/img/*
+/config.php
+/vendor/
