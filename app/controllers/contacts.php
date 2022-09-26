@@ -7,18 +7,18 @@ function contacts_index(array $params = []): void
         [
             'img' => 'telegram.png',
             'img_alt' => 'Telegram',
-            'username' => 'trapmechanic01',
-            'link' => 'https://t.me/trapmechanic01',
+            'username' => 'iikworks',
+            'link' => 'https://t.me/iikworks',
         ], [
             'img' => 'kwork.png',
             'img_alt' => 'Kwork',
-            'username' => '_karprog',
-            'link' => 'https://kwork.ru/user/_karprog',
+            'username' => 'iikworks',
+            'link' => 'https://kwork.ru/user/iikworks',
         ], [
             'img' => 'github.png',
             'img_alt' => 'Github',
-            'username' => 'karprog01',
-            'link' => 'https://github.com/karprog01',
+            'username' => 'iikworks',
+            'link' => 'https://github.com/iikworks',
         ],
     ];
 

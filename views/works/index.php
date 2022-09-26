@@ -1,22 +1,20 @@
 <?php if(!defined('APP_VERSION')) die('access denied'); ?>
 <?php tpl_include('layout/head', $vars); ?>
-    <div class="container mt-3">
-        <div class="row">
+    <div class="container mx-auto mt-6 px-0 lg:px-10">
+        <div class="grid grid-cols-1 mx-5 gap-4 lg:grid-cols-4 lg:mx-0">
             <?php foreach($works as $work){ ?>
-                <div class="col-3">
-                    <a href="<?=url_for('works:detail', ['id' => $work['id']])?>" class="text-decoration-none">
-                        <div class="card text-white bg-secondary mb-3">
-                            <div class="card-header text-uppercase"><?=$work['title']?></div>
-                            <img src="<?=UPLOAD_URL.'/'.$work['image']['name']?>" alt="<?=$work['title']?>" height="170px;">
-                            <div class="card-body">
-                                <h4 class="card-title"><?=$work['technologies']?></h4>
-                                <p class="card-text">
-                                    <?=$work['short']?>
-                                </p>
-                            </div>
+                <a href="<?=url_for('works:detail', ['id' => $work['id']])?>" class="text-white bg-black bg-opacity-40 rounded-lg shadow-md hover:shadow-2xl transition duration-300">
+                    <div class="opacity-75 font-medium text-lg text-center my-2">
+                        <?=$work['title']?>
+                    </div>
+                    <img src="<?=UPLOAD_URL.'/'.$work['image']['name']?>" alt="<?=$work['title']?>">
+                    <div class="mt-3">
+                        <div class="font-medium text-lg opacity-50 mx-5"><?=$work['technologies']?></div>
+                        <div class="mx-5 mb-3">
+                            <?=$work['short']?>
                         </div>
-                    </a>
-                </div>
+                    </div>
+                </a>
             <?php } ?>
         </div>
     </div>
