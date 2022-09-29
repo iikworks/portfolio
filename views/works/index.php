@@ -1,9 +1,10 @@
-<?php if(!defined('APP_VERSION')) die('access denied'); ?>
-<?php tpl_include('layout/head', $vars); ?>
+<?php use IIKWorks\Portfolio\Controllers\WorksController;
+
+view('layout/head', $vars); ?>
     <div class="container mx-auto mt-6 px-0 lg:px-10">
         <div class="grid grid-cols-1 mx-5 gap-4 lg:grid-cols-4 lg:mx-0">
             <?php foreach($works as $work){ ?>
-                <a href="<?=url_for('works:detail', ['id' => $work['id']])?>" class="text-white bg-black bg-opacity-40 rounded-lg shadow-md hover:shadow-2xl transition duration-300">
+                <a href="<?=url_for(WorksController::class, 'detail', ['id' => $work['id']])?>" class="text-white bg-black bg-opacity-40 rounded-lg shadow-md hover:shadow-2xl transition duration-300">
                     <div class="opacity-75 font-medium text-lg text-center my-2">
                         <?=$work['title']?>
                     </div>
@@ -18,4 +19,4 @@
             <?php } ?>
         </div>
     </div>
-<?php tpl_include('layout/footer', $vars); ?>
+<?php view('layout/footer', $vars); ?>

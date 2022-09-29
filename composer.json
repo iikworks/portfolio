@@ -1,0 +1,18 @@
+{
+    "name": "iikworks/portfolio",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "IIKWorks\\Portfolio\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Igor Karplyuk",
+            "email": "johndevice834@gmail.com"
+        }
+    ],
+    "require": {
+      "ext-mysqli": "*"
+    }
+}

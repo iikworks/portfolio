@@ -1,5 +1,4 @@
-<?php if(!defined('APP_VERSION')) die('access denied'); ?>
-<?php tpl_include('layout/head', $vars); ?>
+<?php view('layout/head', $vars); ?>
     <div class="container mx-auto mt-6 px-0 lg:px-10">
         <div class="grid grid-cols-1 mx-5 gap-4 md:grid-cols-3 md:mx-0">
             <?php foreach($contacts as $contact){ ?>
@@ -13,4 +12,4 @@
             <?php } ?>
         </div>
     </div>
-<?php tpl_include('layout/footer', $vars); ?>
+<?php view('layout/footer', $vars); ?>

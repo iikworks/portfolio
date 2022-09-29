@@ -1,5 +1,6 @@
-<?php if(!defined('APP_VERSION')) die('access denied'); ?>
-<?php tpl_include('layout/head', $vars); ?>
+<?php use IIKWorks\Portfolio\Controllers\WorksController;
+
+view('layout/head', $vars); ?>
     <div class="container mx-auto mt-5 px-0 lg:px-10">
         <div class="bg-black bg-opacity-70 mx-3 lg:mx-0 rounded-2xl shadow-lg text-white p-4 lg:p-10">
             <h1 class="text-4xl uppercase font-bold"><?=$work['title']?></h1>
@@ -43,7 +44,7 @@
                 );
             }
             ?>
-            <a href="<?=url_for('works:index')?>" class="text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 mt-10 justify-center font-medium text-md rounded-xl py-2 relative flex w-full hover:from-pink-500 hover:to-indigo-500">К списку работ</a>
+            <a href="<?=url_for(WorksController::class, 'index')?>" class="text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 mt-10 justify-center font-medium text-md rounded-xl py-2 relative flex w-full hover:from-pink-500 hover:to-indigo-500">К списку работ</a>
         </div>
     </div>
-<?php tpl_include('layout/footer', $vars); ?>
+<?php view('layout/footer', $vars); ?>

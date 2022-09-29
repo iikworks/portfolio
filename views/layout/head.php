@@ -1,4 +1,3 @@
-<?php if(!defined('APP_VERSION')) die('access denied'); ?>
 <!doctype html>
 <html lang="ru">
 <head>
@@ -20,7 +19,7 @@
                     </div>
                     <div class="hidden md:block">
                         <div class="ml-10 flex items-baseline space-x-4">
-                            <?=tpl_include('layout/menu', $vars)?>
+                            <?php view('layout/menu', $vars)?>
                         </div>
                     </div>
                 </div>
@@ -40,7 +39,7 @@
             <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
                 <?php
                     $vars['is_mobile'] = true;
-                    tpl_include('layout/menu', $vars);
+                    view('layout/menu', $vars);
                 ?>
             </div>
         </div>

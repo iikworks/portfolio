@@ -1,12 +1,16 @@
 <?php
+
+use IIKWorks\Portfolio\Controllers\ContactsController;
+use IIKWorks\Portfolio\Controllers\WorksController;
+
 $elements = [
     [
         'title' => 'Работы',
-        'url' => url_for('works:index'),
+        'url' => url_for(WorksController::class, 'index'),
         'page' => 'works'
     ], [
         'title' => 'Контакты',
-        'url' => url_for('contacts:index'),
+        'url' => url_for(ContactsController::class, 'contacts'),
         'page' => 'contacts'
     ],
 ];
